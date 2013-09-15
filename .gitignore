@@ -1,0 +1,6 @@
+build
+*.swp
+bin
+msg_gen
+src/bciinterface_rosreceiver
+lib
