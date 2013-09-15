@@ -30,3 +30,6 @@ target_link_libraries(rosreceiver bci-interface sfml-graphics sfml-window sfml-s
 rosbuild_add_executable(testROSReceiver src/testROSReceiver.cpp)
 target_link_libraries(testROSReceiver rosreceiver bci-interface)
 rosbuild_link_boost(testROSReceiver filesystem system thread)
+
+install(TARGETS rosreceiver DESTINATION ${BCIINTERFACE_LIBRARY_DIRS})
+install(FILES src/ROSReceiver.h DESTINATION ${BCIINTERFACE_INCLUDE_DIRS}/bci-interface/CommandReceiver)
