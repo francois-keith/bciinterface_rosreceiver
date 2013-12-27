@@ -3,8 +3,8 @@
 #include <string>
 #include <ros/ros.h>
 
-#ifndef _H_ROSBACKGROUND_H_
-#define _H_ROSBACKGROUND_H_
+#ifndef _H_ROSRECEIVER_H_
+#define _H_ROSRECEIVER_H_
 
 namespace sf
 {
