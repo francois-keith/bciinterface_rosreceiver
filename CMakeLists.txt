@@ -22,8 +22,6 @@ pkg_check_modules(BCIINTERFACE bci-interface )
 include_directories( ${BCIINTERFACE_INCLUDE_DIRS} )
 link_directories( "${BCIINTERFACE_LIBRARY_DIRS}")
 
-rosbuild_genmsg()
-
 rosbuild_add_library(rosreceiver src/ROSReceiver.cpp)
 target_link_libraries(rosreceiver bci-interface sfml-graphics sfml-window sfml-system)
 
