@@ -9,7 +9,7 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/bciinterface_rosreceiver</url>
   <depend package="roscpp"/>
-
+  <depend package="bciinterface_rosreceiver_msgs"/>
 </package>
 
 

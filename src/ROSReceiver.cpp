@@ -1,6 +1,6 @@
 #include "ROSReceiver.h"
 
-#include "bciinterface_rosreceiver/BCICommand.h"
+#include "bciinterface_rosreceiver_msgs/BCICommand.h"
 
 namespace bciinterface
 {
@@ -9,7 +9,7 @@ struct ROSReceiverImpl
 {
     ROSReceiverImpl(ros::NodeHandle & nh) : seq(0)
     {
-        pub = nh.advertise<bciinterface_rosreceiver::BCICommand>("bci_command", 10);
+        pub = nh.advertise<bciinterface_rosreceiver_msgs::BCICommand>("bci_command", 10);
     }
 
     ~ROSReceiverImpl()
@@ -33,7 +33,7 @@ int ROSReceiver::GetCommand()
 {
     int cmd = UDPReceiver::GetCommand();
 
-    bciinterface_rosreceiver::BCICommandPtr msg(new bciinterface_rosreceiver::BCICommand);
+    bciinterface_rosreceiver_msgs::BCICommandPtr msg(new bciinterface_rosreceiver_msgs::BCICommand);
     msg->header.seq = ++(impl->seq);
     msg->header.stamp = ros::Time::now();
     msg->cmd = cmd;
