@@ -1,0 +1,23 @@
+<package>
+  <name>bciinterface_rosreceiver</name>
+  <description>
+    A CommandReceiver implementation for bci-interface based upon UDPReceiver,
+    in addition to receiving commands through a UDP socket, the receiver will also
+    broadcast the commands on a ROS topic.
+  </description>
+  <author email="pierre.gergondet+github@gmail.com">Pierre Gergondet</author>
+  <maintainer email="pierre.gergondet+github@gmail.com">Pierre Gergondet</maintainer>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/bciinterface_rosreceiver</url>
+  <version>1.0.0</version>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>bciinterface_rosreceiver_msgs</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>bciinterface_rosreceiver_msgs</run_depend>
+</package>
+
+
