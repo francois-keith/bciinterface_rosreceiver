@@ -3,6 +3,7 @@ project(bciinterface_rosreceiver)
 
 find_package(catkin REQUIRED COMPONENTS
     roscpp
+    bciinterface_rosreceiver_msgs
 )
 
 include_directories(include ${catkin_INCLUDE_DIRS})
@@ -19,6 +20,7 @@ find_package(Boost REQUIRED COMPONENTS filesystem system thread)
 include_directories(${Boost_INCLUDE_DIRS})
 
 add_library(rosreceiver src/ROSReceiver.cpp)
+add_dependencies(rosreceiver bciinterface_rosreceiver_msgs_generate_messages_cpp)
 target_link_libraries(rosreceiver ${catkin_LIBRARIES} bci-interface sfml-graphics sfml-window sfml-system)
 
 add_executable(testROSReceiver src/testROSReceiver.cpp)
