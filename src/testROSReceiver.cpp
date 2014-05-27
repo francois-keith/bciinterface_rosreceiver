@@ -3,7 +3,7 @@
 #include <bci-interface/CommandInterpreter/SimpleInterpreter.h>
 #include <bci-interface/CommandOverrider.h>
 
-#include "ROSReceiver.h"
+#include "bci-interface/CommandReceiver/ROSReceiver.h"
 
 #include <SFML/Graphics.hpp>
 

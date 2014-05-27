@@ -8,13 +8,21 @@ find_package(catkin REQUIRED COMPONENTS
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-catkin_package()
+catkin_package(
+  INCLUDE_DIRS include
+  LIBRARIES rosreceiver
+)
 
 include(FindPkgConfig)
 
 pkg_check_modules(BCIINTERFACE bci-interface )
 include_directories( ${BCIINTERFACE_INCLUDE_DIRS} )
 link_directories( "${BCIINTERFACE_LIBRARY_DIRS}")
+if(${BCIINTERFACE_LIBRARY_DIRS})
+else()
+set(BCIINTERFACE_INCLUDE_DIRS /usr/include)
+set(BCIINTERFACE_LIBRARY_DIRS /usr/lib)
+endif()
 
 find_package(Boost REQUIRED COMPONENTS filesystem system thread)
 include_directories(${Boost_INCLUDE_DIRS})
@@ -27,4 +35,4 @@ add_executable(testROSReceiver src/testROSReceiver.cpp)
 target_link_libraries(testROSReceiver rosreceiver ${Boost_LIBRARIES})
 
 install(TARGETS rosreceiver DESTINATION ${BCIINTERFACE_LIBRARY_DIRS})
-install(FILES src/ROSReceiver.h DESTINATION ${BCIINTERFACE_INCLUDE_DIRS}/bci-interface/CommandReceiver)
+install(FILES include/bci-interface/CommandReceiver/ROSReceiver.h DESTINATION ${BCIINTERFACE_INCLUDE_DIRS}/bci-interface/CommandReceiver)

@@ -1,4 +1,4 @@
-#include "ROSReceiver.h"
+#include "bci-interface/CommandReceiver/ROSReceiver.h"
 
 #include "bciinterface_rosreceiver_msgs/BCICommand.h"
 
